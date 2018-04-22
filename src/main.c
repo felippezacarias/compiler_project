@@ -29,23 +29,16 @@ int main(int argc, char *argv[])
       token1 = analisadorLexico(fpin);
              
       switch(token1.tipo){
-        case PR: puts("\nPalavra Reservada: ");
-                puts(token1.lexema);
-                puts("\nCódigoPR: ");
-                printf(" %d\n",token1.codigoPR);
+        case PR: fprintf(fpout, "(%d,KEY,\"%s\")\n",linhaCodigo,token1.lexema);
         break;         
-        case ID: puts("\nIdentificador: ");
-                puts(token1.lexema);
+
+        case ID: fprintf(fpout, "(%d,ID,\"%s\")\n",linhaCodigo,token1.lexema);
         break;         
-        case SN: puts("\nSinal: ");
-                puts(token1.lexema);
-                puts("\nCódigoSN: ");
-                printf(" %d\n",token1.codigoSinal);
+
+        case SN: fprintf(fpout, "(%d,SN,\"%s\")\n",linhaCodigo,token1.lexema);
         break;
-        case CTI: puts("\nInteiro: ");
-                puts(token1.lexema);
-                puts("\nValor Inteiro: ");
-                printf(" %d\n",token1.valorInt);
+
+        case CTI: fprintf(fpout, "(%d,CTI,\"%s\")\n",linhaCodigo,token1.lexema);
         break;
       }
     }
