@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include<ctype.h>
 #include<string.h>
-#define LIN_TAB_SN 19
-#define LIN_TAB_PR 6
+#define LIN_TAB_SN 6
+#define LIN_TAB_PR 19
 
 
 
