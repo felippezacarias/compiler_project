@@ -35,10 +35,10 @@ int main(int argc, char *argv[])
         case ID: fprintf(fpout, "(%d,ID,\"%s\")\n",linhaCodigo,token1.lexema);
         break;         
 
-        case SN: fprintf(fpout, "(%d,SN,\"%s\")\n",linhaCodigo,token1.lexema);
+        case SN: fprintf(fpout, "(%d,SYM,\"%s\")\n",linhaCodigo,token1.lexema);
         break;
 
-        case CTI: fprintf(fpout, "(%d,CTI,\"%s\")\n",linhaCodigo,token1.lexema);
+        case CTI: fprintf(fpout, "(%d,NUM,\"%s\")\n",linhaCodigo,token1.lexema);
         break;
       }
     }

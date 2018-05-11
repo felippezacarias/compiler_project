@@ -52,14 +52,15 @@ token analisadorLexico(FILE *fp){
                 tokenTeste.lexema[b++]=c;
             }          
         else if((c == '*') && (estadoAtual == 5)){//caso contrario ele é o início do
+                tokenTeste.lexema[b++]=c;
                 estadoAtual=6;                  //comentário        
-                b=0; 
             }         
         else if((c == '*') && ((estadoAtual == 6) || (estadoAtual == 7))){
                 estadoAtual=7;
             }      
         else if(( c == '/') && (estadoAtual == 7) ){//chegou ao final do comentário
                 estadoAtual=0;
+                b=0; 
             }
         else if( ((c == '<') || (c == '>') || (c == '=') || (c == '!') ) && (estadoAtual == 0)){
                 estadoAtual=4;
@@ -133,11 +134,11 @@ token analisadorLexico(FILE *fp){
                 tokenTeste.codigoSinal = resultado2;
         break;
 
-        case 6: printf("\n\nERRO FECHAMENTO DE COMENTARIO ESPERADO LINHA: %d\n\n",linhaCodigo);
+        case 6: printf("\n\nERRO [%s] FECHAMENTO DE COMENTARIO ESPERADO LINHA: %d\n\n",tokenTeste.lexema,linhaCodigo);
                 exit(0);
         break;
 
-        case 7: printf("\n\nERRO FECHAMENTO DE COMENTARIO ESPERADO LINHA: %d\n\n",linhaCodigo);
+        case 7: printf("\n\nERRO [%s] FECHAMENTO DE COMENTARIO ESPERADO LINHA: %d\n\n",tokenTeste.lexema,linhaCodigo);
                 exit(0);
         break;
             
